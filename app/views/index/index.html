@@ -1,0 +1,65 @@
+## -*- coding: utf-8 -*-
+<%inherit file="/_site.html"/>
+<%block name="title">רוצים לעזור?</%block>
+<%block name="head">
+    ${parent.head()}
+    % if config['PRODUCTION']:
+	<link rel="stylesheet" type="text/css" href="/static/css/index.min.css" />
+	<script src="/static/js/index.min.js" type="text/javascript"></script>
+    % else:
+	<link rel="stylesheet/less" type="text/css" href="/static/index/index.less" />
+	<script src="/static/index/index.js" type="text/javascript"></script>
+    % endif
+</%block>
+
+    <div id="topbar">
+	<div class="span1"></div>
+	<div class="span2"></div>
+	<div class="span3"></div>
+	<div class="span4"></div>
+    </div>
+
+<div class="container text-center">
+    <section id="intro">
+	<i class="fa fa-paw fa-5x"></i>
+	<h1>רוצים לעזור?</h1>
+	<h2 class="lead">דימונה אוהבת חיות <a href="#help">זקוקה לכם</a>!</h2>
+    </section>
+
+    <hr>
+
+    <section id="help">
+	<i class="fa fa-heart fa-5x"></i>
+	<h3>אלו הדרכים בהם תוכלו לעזור:</h3>
+	<%include file="/index/_areas.html"/>
+    </section>
+
+    <hr>
+
+    <section id="carousel">
+	<div class="row">
+	    <div class="col-md-8 col-md-offset-2">
+		<%include file="/index/_quotes.html"/>
+	    </div>
+	</div>
+    </section>
+
+    <hr>
+
+    <section id="connect">
+	<h3>צרו קשר</h3>
+	<%include file="/index/_connect.html"/>
+    </section>
+
+    <hr>
+
+    <section>
+	<div class="row row-centered">
+	    <div class="col-md-5 col-centered">
+    		<%include file="/index/_subscribe.html"/>
+	    </div>
+	</div>
+    </section>
+</div>
+
+<footer><%include file="/index/_footer.html"/></footer>
