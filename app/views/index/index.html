@@ -3,6 +3,10 @@
 <%block name="title">רוצים לעזור?</%block>
 <%block name="head">
     ${parent.head()}
+    <meta property="og:title" content="רוצים לעזור? | דימונה אוהבת חיות" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="http://helpus.etcs.me/static/images/dla-logo.png" />
+    <meta property="og:url" content="http://helpus.etcs.me/" />
     % if config['PRODUCTION']:
 	<link rel="stylesheet" type="text/css" href="/static/css/index.min.css" />
 	<script src="/static/js/index.min.js" type="text/javascript"></script>
@@ -33,6 +37,12 @@
         <i class="fa fa-paw fa-5x"></i>
         <h1>רוצים לעזור?</h1>
         <h2 class="lead">דימונה אוהבת חיות <a href="#help">זקוקה לכם</a>!</h2>
+        <blockquote class="text-right">
+הבטח לי דבר אחד, נילס, לזכור תמיד: השמים, האדמה, האגמים, ההרים לא ניתנו רק לבני האדם. הם ניתנו גם לבעלי החיים: לציפורים ולדגים ולכל מי שנשמה באפו. לעולם אל תשכח את זה, נילס!
+- סלמה לגרלף
+{ מתוך הספר "מסע הפלאים של נילס הולגרסון הקטן ואווזי הבר" }
+        </blockqoute>
+
     </section>
 
     <hr>
