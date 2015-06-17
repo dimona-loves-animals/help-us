@@ -20,7 +20,7 @@ def subscribe():
         if request.is_xhr:
     	    return json.dumps({'status': 'success'});
     except mailchimp.ListAlreadySubscribedError:
-        return json.dumps({'status': 'error', 'data': 'כתובת דואר אלקטרוני זו כבר רשומה במערכת'})
+        return json.dumps({'status': 'error', 'data': 'כתובת דואר אלקטרוני זו כבר רשומה במערכת. תודה על ההרשמה.'})
     except mailchimp.Error, e:
 	return json.dumps({'status': 'error', 'data': 'An error occurred: %s - %s' % (e.__class__, e) })
     return redirect('/')

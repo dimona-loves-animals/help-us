@@ -2,10 +2,11 @@
 <ul class="areas">
     ${item(title=u'הצטרפו אלינו בפייסבוק', href='https://www.facebook.com/dimonalovesanimals')}
     ${item(title=u'הצטרפו לקבוצה בפייסבוק', href='https://www.facebook.com/groups/DimonaLoveAnimals/')}
-    ${item(title=u'תרומה כספית', href='http://donate.dimonalovesanimals.org/')}
-    ${item(title=u'אומנה', href='http://foster.dimonalovesanimals.org/')}
-    ${item(title=u'אמצו כלב מההסגר העירוני', href='http://citykennel.dimonalovesanimals.org/')}
+    ## ${item(title=u'תרומה כספית', href='http://donate.dimonalovesanimals.org/')}
+    ${item(title=u'רישום לאומנה', href='https://docs.google.com/forms/d/1Pu5Q0aA1S1bRv66bgg_s4UB6qvQlQ06W7zXNzE_rsPM/viewform')}
+    ## ${item(title=u'אומנה', href='http://foster.dimonalovesanimals.org/')}
+    ## ${item(title=u'אמצו כלב מההסגר העירוני', href='http://citykennel.dimonalovesanimals.org/')}
 </ul>
 <%def name="item(title, href)">
-    <li><h3><a href="${href}">${title}</a></h3></li>
+    <li><h3><a href="${href}" target="_blank">${title}</a></h3></li>
 </%def>

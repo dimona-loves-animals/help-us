@@ -1,6 +1,6 @@
 @import "_palette";
 .container {
-    margin-top: 35px;
+
 }
 body {
     //background-color: @color-secondary-1-1;
@@ -11,10 +11,26 @@ body {
 .fa-coffee {
     color: gray;
 }
+
+#header {
+    //background-attachment: fixed;
+    background-repeat: no-repeat;
+    padding-top: 115px;
+    background-image: url('/static/images/dogs.jpg');
+    background-position: center;
+    background-size: cover;
+    color: white;
+}
+
+#header .color {
+    color: @color-complement-3;
+}
+
 #intro a {
     color: @color-complement-3;
 }
 #help a {
+
     color: @color-secondary-1-3;
 }
 #connect a {
@@ -33,8 +49,12 @@ ol {
 ul.areas {
     list-style-type: none;
     -webkit-padding-start: 0;
+    padding:0;
+    margin:0;
     // items
     li {
+        padding:0;
+        margin:0;
     }
 } // ul.areas
 
@@ -165,4 +185,14 @@ section {
     background-position: center top;
     background-repeat: no-repeat;
     background-size: 100px;
+}
+#fade-quote-carousel.carousel .carousel-inner .item .person {
+    padding-top: 18px;
+}
+#fade-quote-carousel.carousel .carousel-inner .item .person .name {
+
+}
+
+#fade-quote-carousel.carousel .carousel-inner .item .person .title {
+    font-weight: bold;
 }

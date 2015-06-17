@@ -13,27 +13,37 @@
 	    <div class="active item">
 		${quote(
 		    text=u"יישר כוח לעושים במלאכה... אני מאמין כי נקודות הזכות הללו עוד יעמדו לכם ביום מן הימים... תודה.",
-		    image="https://scontent-bru.xx.fbcdn.net/hphotos-frc3/v/t1.0-9/1472789_410270939101928_215096430_n.jpg?oh=325cc791a0da3f024cbea64334312773&amp;oe=557D180C"
+		    image="/static/images/quote1.jpg",
+		    name=u"בני ביטון",
+		    title=u"ראש עיריית דימונה"
 		)}
 	    </div>
 	    <div class="item">
 		${quote(
 		    text=u'אני פונה אליכם הציבור לבוא ולסייע לכלבים החמודים אם זה באימוץ, לקחת אותם לטייל או סתם לבוא וללטף אותם. כי גם להם מגיע יחס חם!.',
-		    image='https://fbcdn-sphotos-b-a.akamaihd.net/hphotos-ak-prn2/t31.0-8/p960x960/1266200_566514113396007_1357172214_o.jpg'
+		    image="/static/images/quote2.jpg",
+		    name=u"אילנה אזולאי",
+		    title=u"ממלאת מקום ראש עיריית דימונה"
 		)}
 	    </div>
 	    <div class="item">
 		${quote(
 		    text=u'עבורי באופן אישי זה מפעל מדהים.',
-		    image='https://fbcdn-profile-a.akamaihd.net/hprofile-ak-xaf1/v/t1.0-1/c37.37.459.459/s320x320/1004913_595829390468219_1353475039_n.jpg?oh=25b74802609afedf898f51d574fb3771&amp;oe=55B68DF6&amp;__gda__=1433951317_f3e56c7f8799606ab225530c417effb8'
+		    image="/static/images/quote3.jpg",
+		    name=u"אריאל ללוש",
+		    title=u"סגן ראש עיריית דימונה"
 		)}
 	    </div>
 	</div>
 </div>
 
-<%def name="quote(text, image)">
+<%def name="quote(text, image, name, title)">
     <blockquote>
         <p>${text}</p>
     </blockquote>
     <div class="profile-circle" style="background-color:rgba(0,0,0,.2);background-image:url('${image}')"></div>
+    <div class="person">
+        <span class="name">${name}</span><br/>
+        <span class="title">${title}</span>
+    </div>
 </%def>
