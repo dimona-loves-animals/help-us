@@ -9,19 +9,10 @@
     <meta property="og:url" content="{{request.url}}" />
     % if config['PRODUCTION']:
 	<link rel="stylesheet" type="text/css" href="/static/css/kennel.min.css" />
-	<script src="/static/js/kennel.min.js" type="text/javascript"></script>
     % else:
 	<link rel="stylesheet/less" type="text/css" href="/static/kennel/kennel.less" />
-	<script src="/static/kennel/kennel.js" type="text/javascript"></script>
     % endif
 </%block>
-
-    <div id="topbar">
-	<div class="span1"></div>
-	<div class="span2"></div>
-	<div class="span3"></div>
-	<div class="span4"></div>
-    </div>
 
     <section id="header">
 	<div class="container text-center">
@@ -33,7 +24,7 @@
 
 
 <div class="container text-right">
-    <section id="intro">
+    <section id="donate">
         <h1>תרומה לכלבי ההסגר</h1>
         <h2 class="lead">להלן רשימת המוצרים שניתן לרכוש עבור הכלבים הנמצאים בהסגר:</h2>
 	<ul>
@@ -54,6 +45,7 @@
 	    </br>כתובת: רח' הבאבא סאלי 1 בדימונה קרוב לבית האבות ולכניסה הדרומית לעיר.
 	</p>
 	<p class="lead">כל תרומה תתקבל בברכה!</p>
+        <p cleass="lead"><a href="/#intro">עוד דרכים לעזור...</a></p>
     </section>
 </div>
 
