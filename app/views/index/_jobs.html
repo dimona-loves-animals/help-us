@@ -1,0 +1,35 @@
+## -*- coding: utf-8 -*-
+<ul class="jobs">
+    ${item(title=u'עיצוב גרפי', tooltip=u'לעיצוב תכנים שנים למדיות שונות')}
+    ${item(title=u'צילום', tooltip=u'צלמי וידיאו וסטילס לצילום כלבים בהסגר העירוני ובבתים פרטיים')}
+    ${item(title=u'ציור דיגיטלי', tooltip=u'לאיורים שונים לאתרים שלנו ולפרסומים')}
+    ${item(title=u'כתיבה', tooltip=u'כתיבת תכנים שונים לפייסבוק ולאתרים שלנו')}
+    ${item(title=u'בניית אתרים', tooltip=u'לשיפור ותחזוק האתרים שלנו')}
+</ul>
+<%def name="item(title, tooltip)">
+    <li>
+	<h3  type="button"
+		style="direction: ltr;"
+		data-toggle="popover"
+		data-trigger="click"
+		data-container="body"
+		data-placement="bottom"
+		data-content="${tooltip}">
+	    ${title}
+	</h3>
+    </li>
+</%def>
+<script>
+$(function () {
+  $('[data-toggle="popover"]').popover();
+  $('body').on('click', function (e) {
+    $('[data-toggle="popover"]').each(function () {
+        //the 'is' for buttons that trigger popups
+        //the 'has' for icons within a button that triggers a popup
+        if (!$(this).is(e.target) && $(this).has(e.target).length === 0 && $('.popover').has(e.target).length === 0) {
+	    $(this).popover('hide');
+        }
+    });
+  });
+})
+</script>
