@@ -1,0 +1,50 @@
+## -*- coding: utf-8 -*-
+<%inherit file="/_site.html"/>
+<%block name="title">הישארו מעודכנים</%block>
+<%block name="head">
+    ${parent.head()}
+    <meta property="og:title" content="הישארו מעודכנים | דימונה אוהבת חיות" />
+    <meta property="og:description" content="הירשמו לרשימת התפוצה שלנו כדי להתעדכן בפעילויות כשהן קורות" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="{{request.url}}static/images/dla-logo.png" />
+    <meta property="og:url" content="{{request.url}}" />
+    % if config['PRODUCTION']:
+	<link rel="stylesheet" type="text/css" href="/static/css/subscribe.min.css" />
+    % else:
+	<link rel="stylesheet/less" type="text/css" href="/static/subscribe/subscribe.less" />
+    % endif
+</%block>
+
+    <section id="header">
+	<div class="container text-center">
+	    <img src="/static/images/dla-logo.png">
+    	    <h1>דימונה אוהבת חיות</h1>
+    	    <h2 class="lead">מתנדבים למען <span class="color">בעלי החיים</span>; למען <span class="color">דימונה</span>.</h2>
+    	</div>
+    </section>
+
+<div class="container text-center">
+    <section id="intro">
+        <i class="fa fa-paw fa-5x"></i>
+        <h1>השארו מעודכנים</h1>
+        <h2 class="lead">הירשמו לרשימת התפוצה שלנו כדי <a href="#subscribe">להתעדכן</a> בפעילויות <a href="#subscribe">כשהן קורות</a></h2>
+        <h3><span class="color">{{ subscribers_count }}</span> כבר נרשמו. <span class="color">מה איתך</span>?</h3>
+    </section>
+</div>
+
+    <section id="subscribe">
+	<div class="container">
+	    <div class="row row-centered">
+		<div class="col-md-5 col-centered">
+    		    <%include file="/subscribe/_subscribe.html"/>
+		</div>
+	    </div>
+	</div>
+    </section>
+
+<div class="container text-center">
+    <section id="connect">
+        <h3>צרו קשר</h3>
+        <%include file="/subscribe/_connect.html"/>
+    </section>
+</div>

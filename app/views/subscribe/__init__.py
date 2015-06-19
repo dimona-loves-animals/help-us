@@ -9,6 +9,21 @@ import mailchimp
 
 list_id = app.config['MAILCHIMP_LIST_ID']
 
+@app.route("/subscribes", methods=['GET',])
+def subscribes():
+    subscribers = 0
+    try:
+	# get mailchimp api instance
+        m = get_mailchimp_api()
+        subscribers = m.lists.members(list_id)
+    except:
+	pass
+    return str(subscribers['total'])
+
+@app.route("/subscribe", methods=['GET',])
+def subscribe_page():
+    return render.template('subscribe', subscribers_count = subscribes())
+
 @app.route("/subscribe", methods=['POST',])
 def subscribe():
     # get email from form
