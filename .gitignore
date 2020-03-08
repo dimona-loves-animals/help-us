@@ -54,7 +54,7 @@ docs/_build/
 target/
 
 # Configuration
-config.py
+/config.py
 
 # Backup files
 *.~
