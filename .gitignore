@@ -58,3 +58,5 @@ target/
 
 # Backup files
 *.~
+
+docker-compose.override.yml
