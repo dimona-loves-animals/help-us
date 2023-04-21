@@ -12,4 +12,5 @@ COPY . .
 WORKDIR /app/views
 RUN dry build
 WORKDIR /
+EXPOSE 80
 CMD ["python", "./run.py"]
