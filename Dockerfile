@@ -1,6 +1,8 @@
-FROM python:2
+FROM python:2.7.17-buster
 RUN apt-get update
-RUN apt-get install -y nodejs npm
+RUN DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends apt-utils
+RUN apt-get install -y nodejs
+RUN apt-get install -y npm
 RUN npm i -g less
 RUN npm i -g less-plugin-clean-css minifyjs
 RUN pip install dry

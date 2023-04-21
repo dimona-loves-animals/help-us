@@ -3,3 +3,8 @@ version: '2.2'
 services:
   web:
     build: .
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.help-dla.rule=Host(`help.dimonalovesanimals.org`)"
+      - "traefik.http.routers.help-dla.entrypoints=websecure"
+      - "traefik.http.routers.help-dla.tls.certresolver=myresolver"
