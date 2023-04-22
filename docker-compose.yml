@@ -3,6 +3,7 @@ version: '2.2'
 services:
   web:
     build: .
+    restart: unless-stopped
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.help-dla.rule=Host(`help.dimonalovesanimals.org`)"
