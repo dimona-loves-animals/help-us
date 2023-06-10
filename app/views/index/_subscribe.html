@@ -3,32 +3,29 @@
     <h2>הרשמה לרשימת התפוצה</h2>
     <p>הירשמו לרשימת התפוצה החדשה שלנו כדי לקבל למייל חדשות ועדכונים על הפעילות</p>
     <form id="subscribe_form" action="/subscribe" method="post">
-	<fieldset>
-    	    <div class="form-group">
-        	<div class="input-prepend"><span class="add-on"><i class="icon-envelope"></i></span>
-            	    <input type="email" id="email" name="email" placeholder="your@email.com" style="direction:ltr;" class="form-control input-md" required>
-    		</div>
-	    </div>
-    	    <div class="lead result"></div>
-    	    <input type="submit" value="הירשמו עכשיו!" class="btn btn-large" />
-    	    <div class="spinner" style="display:none;"><br/><i class="fa fa-spinner fa-spin fa-2x"></i></div>
+        <fieldset>
+            <div class="form-group">
+                <div class="input-prepend"><span class="add-on"><i class="icon-envelope"></i></span>
+                    <input type="email" id="email_address" name="email_address" placeholder="your@email.com"
+                           style="direction:ltr;" class="form-control input-md" required>
+                </div>
+            </div>
+            <div class="lead result"></div>
+            <input type="submit" value="הירשמו עכשיו!" class="btn btn-large"/>
+            <div class="spinner" style="display:none;"><br/><i class="fa fa-spinner fa-spin fa-2x"></i></div>
         </fieldset>
     </form>
 </div>
 <script>
-$( "#subscribe_form" ).submit(function( event ) {
-    $('input[type="submit"]').attr('disabled','disabled');
-    $('#subscribe_form .result').html('');
-    $('#subscribe_form .spinner').show();
-    $.post( "/subscribe", $( "#subscribe_form" ).serialize() , function( data ) {
-	if (data.status=='success') {
-	    $('#subscribe_form .result').html('זהו. קיבלת מייל לאישור לתיבת הדואר האלקטרוני שלך');
-	} else {
-	    $('#subscribe_form .result').html(data.data);
-	}
-	$('input[type="submit"]').removeAttr('disabled');
-	$('#subscribe_form .spinner').hide();
-    }, "json");
-    event.preventDefault();
-});
+    $("#subscribe_form").submit(function (event) {
+        $('input[type="submit"]').attr('disabled', 'disabled');
+        $('#subscribe_form .result').html('');
+        $('#subscribe_form .spinner').show();
+        $.post("https://api.dimonalovesanimals.org/subscribe", $("#subscribe_form").serialize(), function (data) {
+            $('#subscribe_form .result').html('זהו. קיבלת מייל לאישור לתיבת הדואר האלקטרוני שלך');
+            $('input[type="submit"]').removeAttr('disabled');
+            $('#subscribe_form .spinner').hide();
+        }, "json");
+        event.preventDefault();
+    });
 </script>
